@@ -13,7 +13,7 @@ find_path(LIBPLIST_INCLUDE_DIR plist/plist.h
 set(LIBPLIST_FOUND TRUE)
 find_library(LIBPLIST_LIBRARY
 	NAMES libplist plist
-	PATH_SUFFIXES lib build/src/Release build/src/Debug
+	PATH_SUFFIXES lib build/Release build/Debug
 	PATHS ${LIBPLIST_FIND_PATHS}
 )
 
