@@ -1,0 +1,21 @@
+
+set(LIBPLIST_FIND_PATHS
+	$ENV{LIBPLIST_ROOT}
+	${LIBPLIST_ROOT}
+	${CMAKE_SOURCE_DIR}
+)
+
+find_path(LIBPLIST_INCLUDE_DIR plist/plist.h
+	PATH_SUFFIXES src include libplist libplist/include
+	PATHS ${LIBPLIST_FIND_PATHS}
+)
+
+set(LIBPLIST_FOUND TRUE)
+find_library(LIBPLIST_LIBRARY
+	NAMES libplist plist
+	PATH_SUFFIXES lib build/src/Release build/src/Debug
+	PATHS ${LIBPLIST_FIND_PATHS}
+)
+
+set(LIBPLIST_LIBRARIES ${LIBPLIST_LIBRARY})
+set(LIBPLIST_INCLUDE_DIR ${LIBPLIST_INCLUDE_DIR})
